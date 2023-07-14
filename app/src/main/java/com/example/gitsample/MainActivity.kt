@@ -3,7 +3,9 @@ package com.example.gitsample
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -22,7 +24,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Column {
+                        Greeting("Android")
+                        GoButton(text = "Go", onClick = {})
+                    }
                 }
             }
         }
@@ -35,6 +40,17 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         text = "Hello $name!",
         modifier = modifier
     )
+}
+
+
+@Composable
+fun GoButton(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+    Button(
+        modifier = modifier,
+        onClick = onClick,
+    ) {
+        Text(text = text)
+    }
 }
 
 @Preview(showBackground = true)
