@@ -44,6 +44,8 @@ fun Greeting(
 @Composable
 fun GreetingPreview() {
     GitSampleTheme {
-        Greeting("Android")
+        Greeting(
+            "Android"
+        )
     }
 }
