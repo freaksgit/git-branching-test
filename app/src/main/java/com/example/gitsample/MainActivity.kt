@@ -35,7 +35,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(
+    name: String,
+    modifier: Modifier = Modifier
+) {
     Text(
         text = "Hello $name!",
         modifier = modifier
@@ -57,6 +60,8 @@ fun GoButton(text: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     GitSampleTheme {
-        Greeting("Android")
+        Greeting(
+            "Android"
+        )
     }
 }
